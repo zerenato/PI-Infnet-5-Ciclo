@@ -13,4 +13,4 @@ Caso o cliente opte pela compra, o mesmo será encaminhado para a área de login
 Após logar ou se cadastrar, o cliente deverá informar o método de pagamento.
 Ao escolher o método de pagamento, o cliente será encaminhado para uma área segura, onde irá inserir seus dados de cartão de crédito ou débito bancário.
 
-O  cliente será, então, informado do deferimento ou não de sua compra.
+O cliente será, então, informado do deferimento ou não de sua compra.

@@ -7,9 +7,9 @@ public class GerenciadorProduto {
 	
 	public GerenciadorProduto(){
 		//TODO: Popular com dados reais
-		this.produtos.add(new Produto(1, "nome", "data", "condições", 0.0, 0.0, 
+		this.produtos.add(new Produto(1, "produto a", "data", "condições", 1.0, 1.0, 
 				"estado", "categoria", true));
-		this.produtos.add(new Produto(2, "nome", "data", "condições", 0.0, 0.0, 
+		this.produtos.add(new Produto(2, "produto b", "data", "condições", 2.0, 2.0, 
 				"estado", "categoria", false));		
 	}
 

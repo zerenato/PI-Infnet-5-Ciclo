@@ -5,14 +5,13 @@
   <servlet>
    	<servlet-name>IndexServlet</servlet-name>
    	<servlet-class>servlets.IndexServlet</servlet-class>
-  </servlet>
- 
+  </servlet> 
   <servlet-mapping>
    	<servlet-name>IndexServlet</servlet-name>
-   	<url-pattern>/index.jsp</url-pattern>
+   	<url-pattern>/inicio.do</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>inicio.do</welcome-file>
   </welcome-file-list>
 </web-app>

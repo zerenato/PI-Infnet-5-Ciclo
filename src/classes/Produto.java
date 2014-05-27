@@ -7,9 +7,10 @@ public class Produto {
 	private Double precoDe;
 	private Double precoPor;
 	private String estado;
-	private String categoria;	
+	private String categoria;
+	private boolean destaque;
 	
-	public Produto(String nome, String dataLimite, String condicoes, Double precoDe, Double precoPor, String estado, String categoria){
+	public Produto(String nome, String dataLimite, String condicoes, Double precoDe, Double precoPor, String estado, String categoria, boolean destaque){
 		this.nome = nome;
 		this.dataLimite = dataLimite;
 		this.condicoes = condicoes;
@@ -17,6 +18,7 @@ public class Produto {
 		this.categoria = categoria;
 		this.precoDe = precoDe;
 		this.precoPor = precoPor;
+		this.destaque = destaque;
 	}
 
 	public String getNome() {
@@ -74,4 +76,14 @@ public class Produto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+
+	public boolean isDestaque() {
+		return destaque;
+	}
+
+	public void setDestaque(boolean destaque) {
+		this.destaque = destaque;
+	}
+	
+	
 }

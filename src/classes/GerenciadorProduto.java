@@ -8,8 +8,8 @@ public class GerenciadorProduto {
 	public GerenciadorProduto(){
 		//TODO: Popular com dados reais
 		this.produtos.add(new Produto("nome", "data", "condições", 0.0, 0.0, 
-				"estado", "categoria"));
+				"estado", "categoria", true));
 		this.produtos.add(new Produto("nome", "data", "condições", 0.0, 0.0, 
-				"estado", "categoria"));		
+				"estado", "categoria", false));		
 	}
 }

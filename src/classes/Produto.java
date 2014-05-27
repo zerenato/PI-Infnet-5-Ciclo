@@ -1,6 +1,7 @@
 package classes;
 
 public class Produto {
+	private int id;
 	private String nome;
 	private String dataLimite; //duração
 	private String condicoes;
@@ -10,7 +11,8 @@ public class Produto {
 	private String categoria;
 	private boolean destaque;
 	
-	public Produto(String nome, String dataLimite, String condicoes, Double precoDe, Double precoPor, String estado, String categoria, boolean destaque){
+	public Produto(int id, String nome, String dataLimite, String condicoes, Double precoDe, Double precoPor, String estado, String categoria, boolean destaque){
+		this.id = id;
 		this.nome = nome;
 		this.dataLimite = dataLimite;
 		this.condicoes = condicoes;
@@ -19,6 +21,14 @@ public class Produto {
 		this.precoDe = precoDe;
 		this.precoPor = precoPor;
 		this.destaque = destaque;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNome() {

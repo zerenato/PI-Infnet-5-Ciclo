@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import classes.GerenciadorProduto;
+import classes.Produto;
 
 /**
  * Servlet implementation class IndexServlet
@@ -22,14 +24,17 @@ public class IndexServlet extends HttpServlet {
      */
     public IndexServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public void service(HttpServletRequest request, HttpServletResponse response)
     	    throws ServletException, IOException {
     	GerenciadorProduto gp = new GerenciadorProduto();
-    	
-    	request.setAttribute("produtos", gp.getProdutos());
+    	ArrayList<Produto> produtos = new ArrayList<Produto>();
+    	for (Produto p : gp.getProdutos()) {
+			if (p.isDestaque())
+				produtos.add(p);
+		}
+    	request.setAttribute("produtos", produtos);
     	request.getRequestDispatcher("index.jsp").forward(request,response);
     }
 

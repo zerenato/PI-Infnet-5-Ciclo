@@ -10,7 +10,9 @@ public class GerenciadorProduto {
 		this.produtos.add(new Produto(1, "produto a", "data", "condições", 1.0, 1.0, 
 				"estado", "categoria", true));
 		this.produtos.add(new Produto(2, "produto b", "data", "condições", 2.0, 2.0, 
-				"estado", "categoria", false));		
+				"estado", "categoria", false));	
+		this.produtos.add(new Produto(3, "produto c", "data", "condições", 10.0, 6.0, 
+				"estado", "categoria", true));
 	}
 
 	public ArrayList<Produto> getProdutos() {

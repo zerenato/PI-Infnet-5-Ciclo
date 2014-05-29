@@ -23,6 +23,10 @@ public class Produto {
 		this.destaque = destaque;
 	}
 
+	public Produto() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
 		return id;
 	}

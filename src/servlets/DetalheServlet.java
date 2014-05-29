@@ -37,7 +37,7 @@ public class DetalheServlet extends HttpServlet {
 		Produto produto = new Produto();
     	boolean achou = false;
     	int i = 0;
-    	while(!achou && i <= gp.getProdutos().size()){
+    	while(!achou && i < gp.getProdutos().size()){
     		if (gp.getProdutos().get(i).getId() == id){
     			achou=true;
     			produto = gp.getProdutos().get(i);

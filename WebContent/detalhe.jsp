@@ -15,6 +15,53 @@
 </c:choose>
 </head>
 <body>
+	<div class="busca">	
+		<form class="formularioBusca" action="busca.do" method="get">
+			<h2 class="tituloBusca">Faça uma busca por:</h2>
+			<p>Estado:
+			<select name="estado">
+				<option selected="selected" disabled="disabled">Selecione</option>
+    			<option value="AC">Acre</option>
+    			<option value="AL">Alagoas</option>
+    			<option value="AM">Amazonas</option>
+    			<option value="AP">Amapá</option>
+    			<option value="BA">Bahia</option>
+    			<option value="CE">Ceará</option>
+    			<option value="DF">Distrito Federal</option>
+    			<option value="ES">Espirito Santo</option>
+    			<option value="GO">Goiás</option>
+    			<option value="MA">Maranhão</option>
+    			<option value="MG">Minas Gerais</option>
+    			<option value="MS">Mato Grosso do Sul</option>
+    			<option value="MT">Mato Grosso</option>
+    			<option value="PA">Pará</option>
+    			<option value="PB">Paraíba</option>
+    			<option value="PE">Pernambuco</option>
+    			<option value="PI">Piauí</option>
+    			<option value="PR">Paraná</option>
+    			<option value="RJ">Rio de Janeiro</option>
+    			<option value="RN">Rio Grande do Norte</option>
+    			<option value="RO">Rondônia</option>
+    			<option value="RR">Roraima</option>
+    			<option value="RS">Rio Grande do Sul</option>
+    			<option value="SC">Santa Catarina</option>
+    			<option value="SE">Sergipe</option>
+    			<option value="SP">São Paulo</option>
+    			<option value="TO">Tocantins</option>
+			</select></p>
+			<p>Categoria: 
+				<select name="categoria">
+					<option selected="selected" disabled="disabled">Selecione</option>
+					<option value="Produtos">Produtos</option>
+    				<option value="Viagem">Viagem</option>
+    				<option value="Diversao">Diversão</option>
+    				<option value="Estetica">Estética</option>
+				</select>
+			</p>
+			<p>Nome: <input name="nome" type="text" /></p>
+			<input type="submit" class="btnBuscar" value="Buscar">
+		</form>
+	</div> <!-- /busca -->
 <c:choose>
 <c:when test="${produtoEncontrado}">
 
@@ -43,7 +90,7 @@
 </c:when>
 <c:otherwise>
 	<h1><c:out value="Produto não encontrado" /></h1>
-	<p>Provavelmente o produto que você está procurando não existe mais. Clique <a href="/history.go(-1)">aqui</a> para voltar</p>
+	<p>Provavelmente o produto que você está procurando não existe mais. Clique <a href="javascript:window.history.go(-1)">aqui</a> para voltar</p>
 </c:otherwise>
 </c:choose>
 </body>

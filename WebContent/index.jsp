@@ -51,7 +51,7 @@
     				<option value="Estetica">Estética</option>
 				</select>
 			</p>
-			<p>Nome: <input name="nome" type="text" /></p>
+			<p>Nome: <input name="nome" type="text" size="30" placeholder="Digite um termo a ser buscado"/></p>
 			<input type="submit" class="btnBuscar" value="Buscar">
 		</form>
 	</div> <!-- /busca -->
@@ -66,11 +66,11 @@
 					<p class="estado"><c:out value="${produto.getEstado()}" /></p>
 					<c:choose>
 						<c:when test="${produto.getPrecoPor() lt produto.getPrecoDe()}">
-							<p class="precoDe">De: <c:out value="${produto.getPrecoDe()}" /></p>
-							<p class="precoPor">Por: <c:out value="${produto.getPrecoPor()}" /></p>
+							<p class="precoDe">De: R$<c:out value="${produto.getPrecoDe()}" /></p>
+							<p class="precoPor">Por: R$<c:out value="${produto.getPrecoPor()}" /></p>
 							<p class="valorDesconto">Economia de R$ <c:out value="${produto.getPrecoDe() - produto.getPrecoPor()}" /></p></c:when>
 						<c:otherwise>
-							<p class="precoPor">Por: <c:out value="${produto.getPrecoPor()}" /></p>
+							<p class="precoPor">Por: R$ <c:out value="${produto.getPrecoPor()}" /></p>
 						</c:otherwise>
 					</c:choose>
 					<c:url value="detalhe.do" var="urlDetalhe">

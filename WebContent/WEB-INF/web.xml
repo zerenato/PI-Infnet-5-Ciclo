@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>PI-Infnet-5-Ciclo</display-name>
+  
   <filter>
- 	<filter-name>IndexFilter</filter-name>
- 	<filter-class>filters.IndexFilter</filter-class>
-  </filter> 
+    <filter-name>IndexFilter</filter-name>
+    <filter-class>filters.IndexFilter</filter-class>
+  </filter>
   <filter-mapping>
- 	<filter-name>IndexFilter</filter-name>
- 	<url-pattern>/index.jsp</url-pattern>
+    <filter-name>IndexFilter</filter-name>
+    <url-pattern>/index.jsp</url-pattern>
   </filter-mapping>
   
   <servlet>
@@ -17,6 +18,15 @@
   <servlet-mapping>
     <servlet-name>DetalheServlet</servlet-name>
     <url-pattern>/detalhe.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>BuscaServlet</servlet-name>
+    <servlet-class>servlets.BuscaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscaServlet</servlet-name>
+    <url-pattern>/busca.do</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

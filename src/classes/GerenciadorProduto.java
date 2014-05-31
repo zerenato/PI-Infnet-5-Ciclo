@@ -8,11 +8,11 @@ public class GerenciadorProduto {
 	public GerenciadorProduto(){
 		//TODO: Popular com dados reais
 		this.produtos.add(new Produto(1, "produto a", "data", "condições", 1.0, 1.0, 
-				"estado", "categoria", true));
+				"RJ", "Produtos", true));
 		this.produtos.add(new Produto(2, "produto b", "data", "condições", 2.0, 2.0, 
-				"estado", "categoria", false));	
+				"RJ", "viagem", false));	
 		this.produtos.add(new Produto(3, "produto c", "data", "condições", 10.0, 6.0, 
-				"estado", "categoria", true));
+				"ES", "Viagem", true));
 	}
 
 	public ArrayList<Produto> getProdutos() {

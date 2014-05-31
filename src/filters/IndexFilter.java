@@ -40,10 +40,7 @@ public class IndexFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		GerenciadorProduto gp = new GerenciadorProduto();
     	ArrayList<Produto> produtos = new ArrayList<Produto>();
-    	for (Produto p : gp.getProdutos()) {
-			if (p.isDestaque())
-				produtos.add(p);
-		}
+    	produtos = gp.buscaDestaque();
     	request.setAttribute("produtos", produtos);
 		chain.doFilter(request, response);
 	}

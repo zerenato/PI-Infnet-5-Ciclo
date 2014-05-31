@@ -25,54 +25,54 @@ public class GerenciadorProduto {
 	
 	public ArrayList<Produto> buscaEstado(String estado) {
 		ArrayList<Produto> resultadoBusca = new ArrayList<>();
-		for(int i=0; i<this.produtos.size(); i++){
-			if (this.produtos.get(i).getEstado().equalsIgnoreCase(estado))
-    			resultadoBusca.add(this.produtos.get(i));
+		for(Produto p : this.produtos){
+			if (p.getEstado().equalsIgnoreCase(estado))
+    			resultadoBusca.add(p);
     	}
 		return resultadoBusca;
 	}
 
 	public ArrayList<Produto> buscaCategoria(String categoria) {
 		ArrayList<Produto> resultadoBusca = new ArrayList<>();
-		for(int i=0; i<this.produtos.size(); i++){
-			if (this.produtos.get(i).getCategoria().equalsIgnoreCase(categoria))
-    			resultadoBusca.add(this.produtos.get(i));
+		for(Produto p : this.produtos){
+			if (p.getCategoria().equalsIgnoreCase(categoria))
+    			resultadoBusca.add(p);
     	}
 		return resultadoBusca;		
 	}
 
 	public ArrayList<Produto> buscaNome(String nome) {
 		ArrayList<Produto> resultadoBusca = new ArrayList<>();
-		for(int i=0; i<this.produtos.size(); i++){
-			if (this.produtos.get(i).getNome().equalsIgnoreCase(nome))
-    			resultadoBusca.add(this.produtos.get(i));
+		for(Produto p : this.produtos){
+			if (p.getNome().equalsIgnoreCase(nome))
+    			resultadoBusca.add(p);
     	}
 		return resultadoBusca;		
 	}
 
 	public ArrayList<Produto> buscaCategoriaEstado(String categoria, String estado) {
 		ArrayList<Produto> resultadoBusca = new ArrayList<>();
-		for(int i=0; i<this.produtos.size(); i++){
-			if ((this.produtos.get(i).getCategoria().equalsIgnoreCase(categoria)) && (this.produtos.get(i).getEstado().equalsIgnoreCase(estado)))
-    			resultadoBusca.add(this.produtos.get(i));
+		for(Produto p : this.produtos){
+			if ((p.getCategoria().equalsIgnoreCase(categoria)) && (p.getEstado().equalsIgnoreCase(estado)))
+    			resultadoBusca.add(p);
     	}
 		return resultadoBusca;		
 	}
 
 	public ArrayList<Produto> buscaNomeEstado(String nome, String estado) {
 		ArrayList<Produto> resultadoBusca = new ArrayList<>();
-		for(int i=0; i<this.produtos.size(); i++){
-			if ((this.produtos.get(i).getNome().equalsIgnoreCase(nome)) && (this.produtos.get(i).getEstado().equalsIgnoreCase(estado)))
-    			resultadoBusca.add(this.produtos.get(i));
+		for(Produto p : this.produtos){
+			if ((p.getNome().equalsIgnoreCase(nome)) && (p.getEstado().equalsIgnoreCase(estado)))
+    			resultadoBusca.add(p);
     	}
 		return resultadoBusca;		
 	}
 
 	public ArrayList<Produto> buscaNomeCategoria(String nome, String categoria) {
 		ArrayList<Produto> resultadoBusca = new ArrayList<>();
-		for(int i=0; i<this.produtos.size(); i++){
-			if ((this.produtos.get(i).getNome().equalsIgnoreCase(nome)) && (this.produtos.get(i).getCategoria().equalsIgnoreCase(categoria)))
-    			resultadoBusca.add(this.produtos.get(i));
+		for(Produto p : this.produtos){
+			if ((p.getNome().equalsIgnoreCase(nome)) && (p.getCategoria().equalsIgnoreCase(categoria)))
+    			resultadoBusca.add(p);
     	}
 		return resultadoBusca;		
 	}
@@ -80,10 +80,19 @@ public class GerenciadorProduto {
 	public ArrayList<Produto> buscaNomeCategoriaEstado(String nome, String categoria,
 			String estado) {
 		ArrayList<Produto> resultadoBusca = new ArrayList<>();
-		for(int i=0; i<this.produtos.size(); i++){
-			if ((this.produtos.get(i).getNome().equalsIgnoreCase(nome)) && (this.produtos.get(i).getCategoria().equalsIgnoreCase(categoria)) && (this.produtos.get(i).getEstado().equalsIgnoreCase(estado)))
-    			resultadoBusca.add(this.produtos.get(i));
+		for(Produto p : this.produtos){
+			if ((p.getNome().equalsIgnoreCase(nome)) && (p.getCategoria().equalsIgnoreCase(categoria)) && (p.getEstado().equalsIgnoreCase(estado)))
+    			resultadoBusca.add(p);
     	}
 		return resultadoBusca;		
+	}
+
+	public ArrayList<Produto> buscaDestaque() {
+		ArrayList<Produto> resultadoBusca = new ArrayList<>();
+		for (Produto p : this.produtos) {
+			if (p.isDestaque())
+				resultadoBusca.add(p);
+		}
+		return resultadoBusca;
 	}
 }

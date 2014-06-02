@@ -83,7 +83,7 @@
 </c:choose>
 <p class="condicoes">Condições: <c:out value="${produto.getCondicoes()}" /></p>
 <p class="dataLimite">Válido até: <c:out value="${produto.getDataLimite()}" /></p>
-<c:url value="compra.do" var="urlCompra">
+<c:url value="checkout/compra.do" var="urlCompra">
 	<c:param name="id" value="${produto.getId()}" />
 </c:url>
 		

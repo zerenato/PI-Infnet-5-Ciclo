@@ -29,6 +29,16 @@
     <url-pattern>/busca.do</url-pattern>
   </servlet-mapping>
   
+   <filter>
+ 	<filter-name>CheckoutFilter</filter-name>
+ 	<filter-class>filters.AutenticacaoFilter</filter-class>
+ </filter>
+ 
+ <filter-mapping>
+ 	<filter-name>CheckoutFilter</filter-name>
+ 	<url-pattern>/checkout/*</url-pattern>
+ </filter-mapping>
+  
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

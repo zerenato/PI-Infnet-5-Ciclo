@@ -50,7 +50,7 @@
 		<servlet-name>CompraServlet</servlet-name>
 		<url-pattern>/checkout/compra.do</url-pattern>
 	</servlet-mapping>
-
+	
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>

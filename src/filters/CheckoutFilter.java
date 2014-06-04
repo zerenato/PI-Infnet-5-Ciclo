@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class CheckoutFilter implements Filter {
+public class AutenticacaoFilter implements Filter {
 
     private String loginUrl = null;
     private String loginPath = null;

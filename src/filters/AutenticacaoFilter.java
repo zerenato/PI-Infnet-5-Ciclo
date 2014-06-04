@@ -46,7 +46,7 @@ public class AutenticacaoFilter implements Filter {
 		String usuarioLogado = (String) session.getAttribute("login");
 	    
 	    if (usuarioLogado == null) {
-		((HttpServletResponse)response).sendRedirect("../login.html");
+		((HttpServletResponse)response).sendRedirect("../login.jsp");
 	    }
 	    
 	    else {

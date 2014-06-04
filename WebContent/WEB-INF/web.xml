@@ -38,7 +38,7 @@
 	</context-param>
 	<context-param>
 		<param-name>loginPath</param-name>
-		<param-value>/login.html</param-value>
+		<param-value>/login.jsp</param-value>
 	</context-param>
 
 	<servlet>

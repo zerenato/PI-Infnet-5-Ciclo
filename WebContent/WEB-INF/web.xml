@@ -32,6 +32,15 @@
 		<url-pattern>/busca.do</url-pattern>
 	</servlet-mapping>
 
+	<context-param>
+		<param-name>loginUrl</param-name>
+		<param-value>/Login.do</param-value>
+	</context-param>
+	<context-param>
+		<param-name>loginPath</param-name>
+		<param-value>/login.html</param-value>
+	</context-param>
+
 	<filter>
 		<filter-name>CheckoutFilter</filter-name>
 		<filter-class>filters.AutenticacaoFilter</filter-class>

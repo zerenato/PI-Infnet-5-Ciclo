@@ -34,7 +34,7 @@ public class CompraServlet extends HttpServlet {
 		if (request.getParameter("id").matches("[0-9]"))
 			id = Integer.parseInt(request.getParameter("id"));
 		GerenciadorProduto gp = new GerenciadorProduto();
-		Produto produto = new Produto();
+		Produto produto = null;
     	boolean achou = false;
     	int i = 0;
     	while(!achou && i < gp.getProdutos().size() && id!=null){
@@ -45,9 +45,9 @@ public class CompraServlet extends HttpServlet {
     			i++;
     		}
     	}
-    	request.setAttribute("produtoEncontrado", achou);
-    	request.setAttribute("produto", produto);
-    	request.getRequestDispatcher("../checkout/escolhaPagamento.html").forward(request,response);
+    	if (achou)
+    		request.getSession().setAttribute("produtoCompra", produto);
+    	response.sendRedirect("escolhaPagamento.html");
 	}
 
 

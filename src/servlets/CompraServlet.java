@@ -30,13 +30,15 @@ public class CompraServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		Integer id = Integer.parseInt(request.getParameter("id"));
+		// TODO: testar se for nulo
+		Integer id = null;
+		if (request.getParameter("id").matches("[0-9]"))
+			id = Integer.parseInt(request.getParameter("id"));
 		GerenciadorProduto gp = new GerenciadorProduto();
 		Produto produto = new Produto();
     	boolean achou = false;
     	int i = 0;
-    	while(!achou && i < gp.getProdutos().size()){
+    	while(!achou && i < gp.getProdutos().size() && id!=null){
     		if (gp.getProdutos().get(i).getId() == id){
     			achou=true;
     			produto = gp.getProdutos().get(i);
@@ -46,7 +48,7 @@ public class CompraServlet extends HttpServlet {
     	}
     	request.setAttribute("produtoEncontrado", achou);
     	request.setAttribute("produto", produto);
-    	request.getRequestDispatcher("checkout/escolhaPagamento.html").forward(request,response);
+    	request.getRequestDispatcher("../checkout/escolhaPagamento.html").forward(request,response);
 	}
 
 

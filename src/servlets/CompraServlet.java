@@ -30,7 +30,6 @@ public class CompraServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO: testar se for nulo
 		Integer id = null;
 		if (request.getParameter("id").matches("[0-9]"))
 			id = Integer.parseInt(request.getParameter("id"));

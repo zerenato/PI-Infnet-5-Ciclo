@@ -23,12 +23,12 @@ public class LoginServlet extends HttpServlet {
     public void init() throws ServletException {
 	
 	this.usuariosAgrupadosComSenhas = new HashMap<String, String>();
-	this.usuariosAgrupadosComSenhas.put("ze", "renato");
-	this.usuariosAgrupadosComSenhas.put("renato", "ze");
+	this.usuariosAgrupadosComSenhas.put("ze@ze", "renato");
+	this.usuariosAgrupadosComSenhas.put("renato@renato", "ze");
 	
 	this.usuariosAgrupadosComPermissao = new HashMap<String, String>();
-	this.usuariosAgrupadosComPermissao.put("ze", "admin");
-	this.usuariosAgrupadosComPermissao.put("renato", "visitante");
+	this.usuariosAgrupadosComPermissao.put("ze@ze", "admin");
+	this.usuariosAgrupadosComPermissao.put("renato@renato", "visitante");
 	
 	super.init();
     }
@@ -38,6 +38,7 @@ public class LoginServlet extends HttpServlet {
 
 	final String loginInformado = request.getParameter("login");
 	final String senhaInformada = request.getParameter("senha");
+	final String caminhoAplicacao = request.getSession().getAttribute("caminhoAplicacao").toString();
 	
 	final String senha = this.usuariosAgrupadosComSenhas.get(loginInformado);
 	
@@ -45,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 	    
 	    request.getSession().setAttribute("login", loginInformado);
 	    request.getSession().setAttribute("papel", this.usuariosAgrupadosComPermissao.get(loginInformado));
-	    response.sendRedirect("index.html");
+	    response.sendRedirect(caminhoAplicacao.replaceFirst("/", ""));
 	}
 	else
 	{

@@ -1,6 +1,7 @@
 package filters;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -35,6 +36,7 @@ public class AutenticacaoFilter implements Filter {
 	    throws IOException, ServletException {
 	
 	String caminhoAplicacao = ((HttpServletRequest) request).getServletPath();
+	Map<String, String[]> MapParametros = ((HttpServletRequest) request).getParameterMap();
 	
 	//é uma solicitação de login
 	if (this.loginUrl.equals(caminhoAplicacao) || this.loginPath.equals(caminhoAplicacao)) {
@@ -44,9 +46,12 @@ public class AutenticacaoFilter implements Filter {
 	else {
 	    HttpSession session = ((HttpServletRequest)request).getSession();
 		String usuarioLogado = (String) session.getAttribute("login");
+		
 	    
 	    if (usuarioLogado == null) {
-		((HttpServletResponse)response).sendRedirect("../login.jsp");
+	    	String parametros = montarParametros(MapParametros);
+	    	session.setAttribute("caminhoAplicacao", caminhoAplicacao+"?"+parametros);
+	    	((HttpServletResponse)response).sendRedirect("../login.jsp");	    	
 	    }
 	    
 	    else {
@@ -54,4 +59,19 @@ public class AutenticacaoFilter implements Filter {
 	    }
 	}
     }
+
+	private String montarParametros(Map<String, String[]> mapParametros) {
+		// TODO Auto-generated method stub
+		String parametros = "";
+		for (Map.Entry<String,String[]> parametro : mapParametros.entrySet()) {
+			parametros += "&";
+			String nome = parametro.getKey();
+			String valores = "";
+			for (String valor : parametro.getValue()) {
+				valores += "," + valor;				
+			}
+			parametros+= nome + "=" + valores.replaceFirst("," , "");				
+		}
+		return parametros.replaceFirst("&", "");
+	}
 }

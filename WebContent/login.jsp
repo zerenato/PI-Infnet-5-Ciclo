@@ -12,7 +12,7 @@
 		<%} %>
 		<div class="login">
 		<p class="mensagemLogin">Para continuar, faça o login</p>
-		<form method="post" action="Login.do">
+		<form method="post" action="Login.do" class="formularioLogin">
 			Insira o seu email:
 			<input type="email" name="login">
 			<br>
@@ -21,7 +21,7 @@
 			<br>
 			<input type="submit" value="Entrar">
 		</form>
-		<p class="cadastre-se">Ou <a href="cadastro.do">cadastre-se</a></p>
+		<p class="cadastre-se">Ou <a href="cadastro.html">cadastre-se</a></p>
 		</div><!-- /login -->		
 	</body>
 </html>

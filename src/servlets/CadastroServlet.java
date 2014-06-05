@@ -30,10 +30,9 @@ public class CadastroServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		final String email = request.getParameter("email");
-		final String senha = request.getParameter("senha");
 		final String caminhoAplicacao = request.getSession().getAttribute("caminhoAplicacao").toString();
 		request.getSession().setAttribute("login", email);
-		response.sendRedirect(caminhoAplicacao.replaceFirst("/", ""));	    		
+		response.sendRedirect(caminhoAplicacao.replaceFirst("/", ""));
 	}
 
 }

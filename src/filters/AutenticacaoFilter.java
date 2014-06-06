@@ -42,7 +42,7 @@ public class AutenticacaoFilter implements Filter {
 		Produto produtoComprado = (Produto) session
 				.getAttribute("produtoComprado");
 
-		if (produtoComprado == null) {
+		if (produtoComprado == null && !caminhoAplicacao.contains("compra.do")) {
 			((HttpServletResponse) response).sendRedirect("../index.jsp");
 		} else if (usuarioLogado == null) {
 			if (metodo.equalsIgnoreCase("get")) {

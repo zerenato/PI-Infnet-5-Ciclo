@@ -46,6 +46,7 @@ public class CompraServlet extends HttpServlet {
     		}
     	}
     	if (achou){
+    		request.getSession().setAttribute("produtoComprado", produto);
     		response.sendRedirect("escolhaPagamento.html");
     	}else{
     		response.sendRedirect("../index.jsp");;

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import classes.Produto;
+
 
 /**
  * Servlet implementation class FinalizacaoServlet
@@ -67,8 +69,11 @@ public class FinalizacaoServlet extends HttpServlet {
 			mensagem+="\nOs dígitos do cartão devem ser números";
 		}
 		
+		Produto produtoComprado = (Produto) request.getSession().getAttribute("produtoComprado");
+		
 		request.setAttribute("compraDeferida", deferido);
 		request.setAttribute("erros", mensagem);
+		request.setAttribute("produtoComprado", produtoComprado);
     	request.getRequestDispatcher("finalizacao.jsp").forward(request,response);
 	}
 

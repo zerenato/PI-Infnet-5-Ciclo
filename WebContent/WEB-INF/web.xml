@@ -73,6 +73,14 @@
     <servlet-name>EscolhaPagamentoServlet</servlet-name>
     <url-pattern>/checkout/pagamento.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>FinalizacaoServlet</servlet-name>
+    <servlet-class>servlets.FinalizacaoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FinalizacaoServlet</servlet-name>
+    <url-pattern>/checkout/finalizacao.do</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

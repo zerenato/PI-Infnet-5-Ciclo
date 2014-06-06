@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -50,29 +51,29 @@ public class FinalizacaoServlet extends HttpServlet {
 		Date dataValidade = calendar.getTime();
 		
 		boolean deferido = true;
-		String mensagem = "";
+		ArrayList<String> erros = new ArrayList<String>();
 		
 		if(bandeira == null){ //validando se bandeira foi escolhida
 			deferido = false;
-			mensagem+="Bandeira não selecionada";
+			erros.add("Bandeira não selecionada");
 		}
 		if(!numero.matches("[0-9]*")){ //validando se número é realmente número
 			deferido = false;
-			mensagem+="\nO número do cartão deve conter apenas números";
+			erros.add("O número do cartão deve conter apenas números");
 		}
 		if(dataAgora.after(dataValidade)){//validando se o cartão está na validade
 			deferido = false;
-			mensagem+="\nO cartão está fora da validade";
+			erros.add("O cartão está fora da validade");
 		}
 		if(!digitosSeguranca.matches("[0-9]*")){//validando se os dígitos de segurança são números
 			deferido = false;
-			mensagem+="\nOs dígitos do cartão devem ser números";
+			erros.add("Os dígitos do cartão devem ser números");
 		}
 		
 		Produto produtoComprado = (Produto) request.getSession().getAttribute("produtoComprado");
 		
 		request.setAttribute("compraDeferida", deferido);
-		request.setAttribute("erros", mensagem);
+		request.setAttribute("erros", erros);
 		request.setAttribute("produtoComprado", produtoComprado);
     	request.getRequestDispatcher("finalizacao.jsp").forward(request,response);
 	}

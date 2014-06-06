@@ -37,6 +37,7 @@ public class AutenticacaoFilter implements Filter {
 	
 	String caminhoAplicacao = ((HttpServletRequest) request).getServletPath();
 	Map<String, String[]> MapParametros = ((HttpServletRequest) request).getParameterMap();
+	String metodo = ((HttpServletRequest) request).getMethod();
 	
 	//é uma solicitação de login
 	if (this.loginUrl.equals(caminhoAplicacao) || this.loginPath.equals(caminhoAplicacao)) {
@@ -49,8 +50,12 @@ public class AutenticacaoFilter implements Filter {
 		
 	    
 	    if (usuarioLogado == null) {
-	    	String parametros = montarParametros(MapParametros);
-	    	session.setAttribute("caminhoAplicacao", caminhoAplicacao+"?"+parametros);
+	    	if (metodo.equalsIgnoreCase("get")){
+	    		String parametros = montarParametros(MapParametros);
+	    		session.setAttribute("caminhoAplicacao", caminhoAplicacao+"?"+parametros);
+	    	}else{
+	    		session.setAttribute("caminhoAplicacao", caminhoAplicacao);
+	    	}
 	    	((HttpServletResponse)response).sendRedirect("../login.jsp");	    	
 	    }
 	    

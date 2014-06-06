@@ -15,6 +15,7 @@
 </c:choose>
 </head>
 <body>
+<a href="Logout.do">Logout</a>
 <div class="detalhesCompra">
 <h1>Detalhes da compra</h1>
 <p class="nomeProduto"><strong>Nome da promoção:</strong> <c:out value="${produtoComprado.getNome()}" /></p>

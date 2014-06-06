@@ -8,6 +8,7 @@
 <title>Insira os dados de Pagamento</title>
 </head>
 <body>
+<a href="Logout.do">Logout</a>
 <form method="post" action="finalizacao.do" class="formularioPagamento">
 <p>Insira os dados do cartão de <strong><c:out value="${formaPagamento}"/></strong></p>
 <br/>

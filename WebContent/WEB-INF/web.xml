@@ -33,6 +33,14 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/Login.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>servlets.LogoutServlet</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/checkout/Logout.do</url-pattern>
+  </servlet-mapping>
   <filter>
     <filter-name>CheckoutFilter</filter-name>
     <filter-class>filters.AutenticacaoFilter</filter-class>

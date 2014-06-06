@@ -31,7 +31,7 @@ public class CompraServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Integer id = null;
-		if (request.getParameter("id").matches("[0-9]"))
+		if (request.getParameter("id").matches("[0-9]*"))
 			id = Integer.parseInt(request.getParameter("id"));
 		GerenciadorProduto gp = new GerenciadorProduto();
 		Produto produto = null;
@@ -46,6 +46,7 @@ public class CompraServlet extends HttpServlet {
     		}
     	}
     	if (achou){
+    		request.getSession().setAttribute("produtoComprado", produto);
     		response.sendRedirect("escolhaPagamento.html");
     	}else{
     		response.sendRedirect("../index.jsp");;

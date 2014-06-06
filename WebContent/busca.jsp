@@ -53,7 +53,7 @@
 				</select>
 			</p>
 			<p>
-				Nome: <input name="nome" type="text" size="30"
+				Nome: <input name="nome" type="search" size="30"
 					placeholder="Digite um termo a ser buscado" />
 			</p>
 			<input type="submit" class="btnBuscar" value="Buscar">

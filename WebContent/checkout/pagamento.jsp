@@ -11,15 +11,15 @@
 <form method="post" action="finalizacao.do" class="formularioPagamento">
 <p>Insira os dados do cartão de <strong><c:out value="${formaPagamento}"/></strong></p>
 <br/>
-Bandeira: <input type="radio" name="bandeira" value="visa">Visa <input type="radio" name="bandeira" value="master">Master Card <input type="radio" name="bandeira" value="amex">American Express <input type="radio" name="bandeira" value="elo">Elo
+Bandeira: <input type="radio" name="bandeira" value="visa">Visa <input type="radio" name="bandeira" value="master">Master Card <input type="radio" name="bandeira" value="amex">American Express <input type="radio" name="bandeira" value="diners">Diners
 <br/><br/>
-Número do cartão de <c:out value="${formaPagamento}"/>: <input type="text"  required="required" name="numero" autocomplete="off" placeholder="Digite o número do cartão">
+Número do cartão de <c:out value="${formaPagamento}"/>: <input type="text" maxlength="16" required="required" name="numero" autocomplete="off" placeholder="Digite o número do cartão">
 <br/>
 Nome que consta no cartão: <input type="text"  required="required" name="nome">
 <br/>
 Validade: <input type="month"  required="required" name="validade">
 <br/>
-Dígitos de segurança: <input type="text" size="23" autocomplete="off" required="required" name="digitosSeguranca" placeholder="Esses dígitos estão no verso">
+Dígitos de segurança: <input type="text" size="23" maxlength="4" autocomplete="off" required="required" name="digitosSeguranca" placeholder="Esses dígitos estão no verso">
 <br/>
 <input type="submit" value="Comprar">
 </form>

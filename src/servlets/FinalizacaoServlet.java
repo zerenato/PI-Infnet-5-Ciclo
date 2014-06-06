@@ -54,7 +54,7 @@ public class FinalizacaoServlet extends HttpServlet {
 			deferido = false;
 			mensagem+="Bandeira não selecionada";
 		}
-		if(!numero.matches("[0-9]")){ //validando se número é realmente número
+		if(!numero.matches("[0-9]*")){ //validando se número é realmente número
 			deferido = false;
 			mensagem+="\nO número do cartão deve conter apenas números";
 		}
@@ -62,7 +62,7 @@ public class FinalizacaoServlet extends HttpServlet {
 			deferido = false;
 			mensagem+="\nO cartão está fora da validade";
 		}
-		if(!digitosSeguranca.matches("[0-9]")){//validando se os dígitos de segurança são números
+		if(!digitosSeguranca.matches("[0-9]*")){//validando se os dígitos de segurança são números
 			deferido = false;
 			mensagem+="\nOs dígitos do cartão devem ser números";
 		}
